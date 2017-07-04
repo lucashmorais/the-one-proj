@@ -1,0 +1,20 @@
+Message stats for scenario finalComparison-EpidemicOracleRouter-256-1M-1M
+sim_time: 3000.0000
+created: 100
+started: 4909
+relayed: 4909
+aborted: 0
+dropped: 4246
+removed: 497
+delivered: 13
+delivery_prob: 0.1300
+response_prob: 0.0000
+overhead_ratio: 376.6154
+latency_avg: 846.8462
+latency_med: 420.0000
+hopcount_avg: 14.0000
+hopcount_med: 9
+buffertime_avg: 130.4318
+buffertime_med: 60.0000
+rtt_avg: NaN
+rtt_med: NaN

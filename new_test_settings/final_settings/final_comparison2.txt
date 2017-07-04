@@ -1,0 +1,21 @@
+Scenario.name = finalComparison-%%Group.router%%-%%Group.nrofHosts%%-%%Group.bufferSize%%-%%interface.transmitSpeed%%
+
+Group.router = [SprayAndWaitRouter; DirectDeliveryRouter; EpidemicRouter; EpidemicOracleRouter; PassiveRouter]
+Group.movementModel = CarMovement
+#Group.nrofHosts = [32; 256; 2048]
+Group.nrofHosts = 256
+Group.bufferSize = [1M; 64M; 2048M]
+
+interface.type = SimpleBroadcastInterface
+interface.transmitSpeed = [128k; 1M]
+interface.transmitRange = 50
+
+#Events1.hosts = 0,32
+Events1.hosts = 0,255
+#Events1.hosts = 0,2047
+
+MovementModel.rngSeed = 0
+Report.nrofReports = 1
+Report.report1 = MessageStatsReport
+
+Report.reportDir = final_comparison/

@@ -1,0 +1,9 @@
+Scenario.name = simpleComparison-%%Group.router%%
+
+Group.router = [SprayAndWaitRouter; DirectDeliveryRouter; EpidemicRouter; EpidemicOracleRouter; PassiveRouter]
+
+MovementModel.rngSeed = 0
+Report.nrofReports = 1
+Report.report1 = MessageStatsReport
+
+Report.reportDir = new_comparison/

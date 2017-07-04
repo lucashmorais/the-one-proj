@@ -1,0 +1,20 @@
+Message stats for scenario finalComparison-EpidemicRouter-32-1M-1M
+sim_time: 43200.0000
+created: 1465
+started: 2742
+relayed: 2733
+aborted: 9
+dropped: 4047
+removed: 0
+delivered: 116
+delivery_prob: 0.0792
+response_prob: 0.0000
+overhead_ratio: 22.5603
+latency_avg: 616.9310
+latency_med: 345.0000
+hopcount_avg: 2.1293
+hopcount_med: 1
+buffertime_avg: 328.2861
+buffertime_med: 215.0000
+rtt_avg: NaN
+rtt_med: NaN

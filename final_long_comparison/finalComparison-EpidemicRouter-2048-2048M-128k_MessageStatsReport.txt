@@ -1,0 +1,20 @@
+Message stats for scenario finalComparison-EpidemicRouter-2048-2048M-128k
+sim_time: 43200.0000
+created: 1461
+started: 6276144
+relayed: 2852408
+aborted: 3422922
+dropped: 1728615
+removed: 0
+delivered: 1405
+delivery_prob: 0.9617
+response_prob: 0.0000
+overhead_ratio: 2029.1836
+latency_avg: 1046.9865
+latency_med: 999.0000
+hopcount_avg: 6.2626
+hopcount_med: 6
+buffertime_avg: 16707.2342
+buffertime_med: 16776.0000
+rtt_avg: NaN
+rtt_med: NaN

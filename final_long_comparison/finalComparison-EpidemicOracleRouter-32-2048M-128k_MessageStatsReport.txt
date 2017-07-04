@@ -1,0 +1,20 @@
+Message stats for scenario finalComparison-EpidemicOracleRouter-32-2048M-128k
+sim_time: 43200.0000
+created: 1465
+started: 62474
+relayed: 62474
+aborted: 0
+dropped: 0
+removed: 20172
+delivered: 1395
+delivery_prob: 0.9522
+response_prob: 0.0000
+overhead_ratio: 43.7842
+latency_avg: 1420.7240
+latency_med: 1261.0000
+hopcount_avg: 3.3907
+hopcount_med: 3
+buffertime_avg: 846.9792
+buffertime_med: 660.0000
+rtt_avg: NaN
+rtt_med: NaN

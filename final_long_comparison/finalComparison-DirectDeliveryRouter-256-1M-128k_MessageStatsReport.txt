@@ -1,0 +1,20 @@
+Message stats for scenario finalComparison-DirectDeliveryRouter-256-1M-128k
+sim_time: 43200.0000
+created: 1469
+started: 840
+relayed: 350
+aborted: 490
+dropped: 1291
+removed: 0
+delivered: 350
+delivery_prob: 0.2383
+response_prob: 0.0000
+overhead_ratio: 0.0000
+latency_avg: 3232.7200
+latency_med: 2399.0000
+hopcount_avg: 1.0000
+hopcount_med: 1
+buffertime_avg: 4740.7800
+buffertime_med: 3387.0000
+rtt_avg: NaN
+rtt_med: NaN

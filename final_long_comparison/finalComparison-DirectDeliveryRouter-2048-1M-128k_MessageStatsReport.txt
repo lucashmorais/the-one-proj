@@ -1,0 +1,20 @@
+Message stats for scenario finalComparison-DirectDeliveryRouter-2048-1M-128k
+sim_time: 43200.0000
+created: 1461
+started: 1554
+relayed: 646
+aborted: 906
+dropped: 990
+removed: 0
+delivered: 646
+delivery_prob: 0.4422
+response_prob: 0.0000
+overhead_ratio: 0.0000
+latency_avg: 5969.9272
+latency_med: 4866.0000
+hopcount_avg: 1.0000
+hopcount_med: 1
+buffertime_avg: 13109.1960
+buffertime_med: 17943.0000
+rtt_avg: NaN
+rtt_med: NaN

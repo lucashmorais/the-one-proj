@@ -1,0 +1,5 @@
+Scenario.name = SprayAndWait
+Scenario.endTime = 3000
+Group.router = SprayAndWaitRouter
+SprayAndWaitRouter.nrofCopies = 10
+SprayAndWaitRouter.binaryMode = true

@@ -1,0 +1,20 @@
+Message stats for scenario finalComparison-SprayAndWaitRouter-256-64M-128k
+sim_time: 43200.0000
+created: 1469
+started: 22284
+relayed: 8583
+aborted: 13700
+dropped: 5124
+removed: 0
+delivered: 1330
+delivery_prob: 0.9054
+response_prob: 0.0000
+overhead_ratio: 5.4534
+latency_avg: 3181.7173
+latency_med: 2278.0000
+hopcount_avg: 2.1263
+hopcount_med: 2
+buffertime_avg: 17848.2164
+buffertime_med: 17889.0000
+rtt_avg: NaN
+rtt_med: NaN

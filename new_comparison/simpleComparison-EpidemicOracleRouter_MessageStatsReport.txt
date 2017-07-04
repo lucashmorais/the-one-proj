@@ -1,0 +1,20 @@
+Message stats for scenario simpleComparison-EpidemicOracleRouter
+sim_time: 3000.1000
+created: 100
+started: 9973
+relayed: 9973
+aborted: 0
+dropped: 8012
+removed: 1187
+delivered: 39
+delivery_prob: 0.3900
+response_prob: 0.0000
+overhead_ratio: 254.7179
+latency_avg: 1001.4949
+latency_med: 889.8000
+hopcount_avg: 7.9487
+hopcount_med: 8
+buffertime_avg: 174.7354
+buffertime_med: 100.9000
+rtt_avg: NaN
+rtt_med: NaN

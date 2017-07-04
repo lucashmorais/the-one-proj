@@ -1,0 +1,20 @@
+Message stats for scenario simpleComparison-EpidemicRouter
+sim_time: 3000.1000
+created: 100
+started: 2805
+relayed: 1271
+aborted: 1533
+dropped: 591
+removed: 0
+delivered: 22
+delivery_prob: 0.2200
+response_prob: 0.0000
+overhead_ratio: 56.7727
+latency_avg: 1348.3636
+latency_med: 1409.4000
+hopcount_avg: 3.7273
+hopcount_med: 3
+buffertime_avg: 908.9975
+buffertime_med: 872.9000
+rtt_avg: NaN
+rtt_med: NaN
