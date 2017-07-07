@@ -1,0 +1,20 @@
+Message stats for scenario finalComparison-buses-DirectDeliveryRouter-64-1M-1M
+sim_time: 3000.0000
+created: 100
+started: 28
+relayed: 28
+aborted: 0
+dropped: 76
+removed: 0
+delivered: 28
+delivery_prob: 0.2800
+response_prob: 0.0000
+overhead_ratio: 0.0000
+latency_avg: 245.9286
+latency_med: 80.0000
+hopcount_avg: 1.0000
+hopcount_med: 1
+buffertime_avg: 533.8553
+buffertime_med: 411.0000
+rtt_avg: NaN
+rtt_med: NaN

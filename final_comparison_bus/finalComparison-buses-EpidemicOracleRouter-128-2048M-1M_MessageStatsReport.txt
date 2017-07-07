@@ -1,0 +1,20 @@
+Message stats for scenario finalComparison-buses-EpidemicOracleRouter-128-2048M-1M
+sim_time: 3000.0000
+created: 100
+started: 64111
+relayed: 64111
+aborted: 0
+dropped: 0
+removed: 21664
+delivered: 95
+delivery_prob: 0.9500
+response_prob: 0.0000
+overhead_ratio: 673.8526
+latency_avg: 113.4526
+latency_med: 111.0000
+hopcount_avg: 40.6737
+hopcount_med: 36
+buffertime_avg: 83.3420
+buffertime_med: 72.0000
+rtt_avg: NaN
+rtt_med: NaN
