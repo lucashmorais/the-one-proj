@@ -1,0 +1,20 @@
+Message stats for scenario finalComparison-buses-EpidemicRouter-32-1M-1M
+sim_time: 3000.0000
+created: 100
+started: 1905
+relayed: 1902
+aborted: 2
+dropped: 1866
+removed: 0
+delivered: 17
+delivery_prob: 0.1700
+response_prob: 0.0000
+overhead_ratio: 110.8824
+latency_avg: 451.1176
+latency_med: 198.0000
+hopcount_avg: 5.7059
+hopcount_med: 5
+buffertime_avg: 92.6822
+buffertime_med: 22.0000
+rtt_avg: NaN
+rtt_med: NaN
