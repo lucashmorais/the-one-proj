@@ -24,6 +24,10 @@ The following tables describe all the test configurations that we run the simula
 |------------------|
 |50 m|
 
+|Average period of packet creation|
+|---------------------------------|
+|30s|
+
 |Transmission Speed|
 |------------------|
 |128 KB/s          |
@@ -41,6 +45,12 @@ The following tables describe all the test configurations that we run the simula
 |32             |
 |256            |
 |2048           |
+
+|Buffer size|
+|---------------|
+|1M             |
+|64M            |
+|2048M          |
 
 |Packet TTL|
 |----------|
@@ -96,5 +106,85 @@ In our opinion, this is an interesting performance scale because Delivery Probab
 
 > TODO: Add footnote explaining the VANET acronym.
 
-#### Results and Analysis
-In the following table we display the results of all the 90 tests that were conducted for the scenario above, ordered according to the performance scale described.
+#### Results
+In the following table we display the results of all the 72 tests that were conducted for the scenario above, ordered according to the performance scale described from best to worst.
+
+Index|Routing protocol|# Hosts|Buffer size|Transmission speed|P|L|O
+-|-|-|-|-|-|-|-
+0|EpidemicOracleRouter|2048|2048M|128k|20|-5|-3005
+1|EpidemicOracleRouter|2048|2048M|1M|20|-5|-3005
+2|EpidemicOracleRouter|2048|64M|128k|20|-5|-37272
+3|EpidemicOracleRouter|2048|64M|1M|20|-5|-37272
+4|EpidemicRouter|2048|2048M|1M|18|-7|-2161
+5|EpidemicRouter|2048|64M|1M|18|-7|-2843
+6|EpidemicRouter|256|2048M|1M|16|-8|-252
+7|EpidemicRouter|256|64M|1M|16|-8|-253
+8|EpidemicOracleRouter|256|2048M|128k|16|-8|-353
+9|EpidemicOracleRouter|256|2048M|1M|16|-8|-353
+10|EpidemicOracleRouter|256|64M|128k|16|-8|-363
+11|EpidemicOracleRouter|256|64M|1M|16|-8|-363
+12|EpidemicRouter|2048|2048M|128k|14|-9|-2042
+13|EpidemicRouter|2048|64M|128k|14|-9|-2042
+14|SprayAndWaitRouter|256|64M|1M|10|-9|-9
+15|SprayAndWaitRouter|256|2048M|1M|10|-9|-9
+16|EpidemicRouter|256|64M|128k|9|-9|-174
+17|EpidemicRouter|256|2048M|128k|9|-9|-174
+18|SprayAndWaitRouter|256|1M|1M|7|-9|-13
+19|EpidemicOracleRouter|32|64M|1M|7|-10|-29
+20|EpidemicOracleRouter|32|2048M|1M|7|-10|-29
+21|EpidemicOracleRouter|32|64M|128k|7|-10|-29
+22|EpidemicOracleRouter|32|2048M|128k|7|-10|-29
+23|SprayAndWaitRouter|2048|2048M|1M|6|-9|-14
+24|SprayAndWaitRouter|256|64M|128k|6|-9|-14
+25|SprayAndWaitRouter|256|2048M|128k|6|-9|-14
+26|SprayAndWaitRouter|2048|64M|1M|6|-9|-14
+27|SprayAndWaitRouter|2048|1M|1M|6|-9|-15
+28|SprayAndWaitRouter|32|64M|1M|6|-10|-9
+29|SprayAndWaitRouter|32|2048M|1M|6|-10|-9
+30|EpidemicRouter|32|64M|1M|6|-10|-12
+31|EpidemicRouter|32|2048M|1M|6|-10|-12
+32|SprayAndWaitRouter|2048|64M|128k|5|-10|-19
+33|SprayAndWaitRouter|2048|2048M|128k|5|-10|-19
+34|SprayAndWaitRouter|2048|1M|128k|4|-10|-23
+35|DirectDeliveryRouter|32|2048M|1M|3|-9|0
+36|DirectDeliveryRouter|2048|2048M|1M|3|-9|0
+37|DirectDeliveryRouter|32|64M|1M|3|-9|0
+38|DirectDeliveryRouter|2048|1M|1M|3|-9|0
+39|DirectDeliveryRouter|2048|64M|1M|3|-9|0
+40|EpidemicRouter|32|64M|128k|3|-10|-7
+41|SprayAndWaitRouter|32|2048M|128k|3|-10|-7
+42|SprayAndWaitRouter|32|64M|128k|3|-10|-7
+43|EpidemicRouter|32|2048M|128k|3|-10|-7
+44|DirectDeliveryRouter|2048|64M|128k|2|-9|0
+45|DirectDeliveryRouter|256|1M|1M|2|-9|0
+46|DirectDeliveryRouter|256|2048M|1M|2|-9|0
+47|DirectDeliveryRouter|2048|1M|128k|2|-9|0
+48|DirectDeliveryRouter|256|64M|1M|2|-9|0
+49|DirectDeliveryRouter|2048|2048M|128k|2|-9|0
+50|SprayAndWaitRouter|256|1M|128k|2|-9|-33
+51|EpidemicOracleRouter|256|1M|128k|2|-9|-376
+52|EpidemicOracleRouter|256|1M|1M|2|-9|-376
+53|EpidemicRouter|256|1M|1M|2|-9|-532
+54|DirectDeliveryRouter|32|1M|1M|1|-7|0
+55|SprayAndWaitRouter|32|1M|1M|1|-8|-14
+56|DirectDeliveryRouter|256|2048M|128k|1|-9|0
+57|DirectDeliveryRouter|256|1M|128k|1|-9|0
+58|DirectDeliveryRouter|256|64M|128k|1|-9|0
+59|EpidemicRouter|2048|1M|1M|1|-9|-60068
+60|DirectDeliveryRouter|32|2048M|128k|1|-10|0
+61|DirectDeliveryRouter|32|64M|128k|1|-10|0
+62|EpidemicOracleRouter|32|1M|128k|0|-7|-39
+63|EpidemicOracleRouter|32|1M|1M|0|-7|-39
+64|EpidemicOracleRouter|2048|1M|1M|0|-7|-52720
+65|EpidemicOracleRouter|2048|1M|128k|0|-7|-52720
+66|DirectDeliveryRouter|32|1M|128k|0|-8|0
+67|SprayAndWaitRouter|32|1M|128k|0|-8|-33
+68|EpidemicRouter|32|1M|1M|0|-8|-36
+69|EpidemicRouter|32|1M|128k|0|-8|-81
+70|EpidemicRouter|256|1M|128k|0|-9|-952
+71|EpidemicRouter|2048|1M|128k|0|-9|-40119
+
+#### Analysis
+With respect to the results just presented, we can notice the following:
+1. Only the EpidemicOracleRouter and the EpidemicRouter protocols are able to display Delivery Probabilities higher than 70% for any simulation scenario.
+2. EpidemicOracleRouter and EpidemicRouter are usually much more taxing on the transmission network than all other routing protocols: if scenarios based on SprayAndWaitRouter and SprayAndWaitRouter never display overhead ratios above 33 (which occurs for scenario \#50), the same metric is as high as 3005 for the best-performing EpidemicOracleRouter scenario or as high as 37272 for other top-five scenarios using the same protocol.
