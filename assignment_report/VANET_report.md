@@ -2,20 +2,13 @@
 
 ### VANET-like Scenario
 #### Description
-In the following experiments, we aimed to simulate how DTNs based on several different routing protocols would behave while serving hosts that moved like cars. In such scenario, hosts travel along the roads of an accurate model of Finland's capital, Helsinki, with transmission range set to 50m and speed varying from 30 to 60 kilometers per hour. Such values were chosen so as to be representative of the behavior of real cars in a city environment and of features that could expect from wireless transmission protocols to be rolled out in the following years.
-
-> TODO: Improve writing.
->
-> TODO: Study how the remaining protocols work.
+While designing the following experiments, we aimed to simulate how DTNs based on several different routing protocols would behave while serving hosts that moved like cars. In such scenario, hosts travel along the roads of an accurate model of Finland's capital, Helsinki, with transmission range set to 50m and speed varying from 30 to 60 kilometers per hour. Such values were chosen so as to be representative of the behavior of real cars in a city environment and of the features that could expect from wireless transmission protocols to be rolled out in the following years.
 
 #### Test methodology
 - Tests were described by 3 configuration files relying on index-run for generating, each, 30 different parameter combinations.
-- We also conducted some tests for checking whether performance figures would vary much if simulation time were increased from 50 min to 12h.
 - All tests were run once with the same random seed.
 - The tables that follow describe the most relevant parameters explored for this scenario.
 - The performance of the DTNs for each particular configuration was judged according to a single performance scale that we discuss in a next subsection.
-
-> Add LaTeX citation to the tables.
 
 ##### Parameter-set tables
 The following tables describe all the test configurations that we run the simulation with.
@@ -109,7 +102,7 @@ In our opinion, this is an interesting performance scale because Delivery Probab
 #### Results
 In the following table we display the results of all the 72 tests that were conducted for the scenario above, ordered according to the performance scale described from best to worst.
 
-Index|Routing protocol|# Hosts|Buffer size|Transmission speed|P|L|O
+Index|Routing protocol|# Hosts|Buffer size|Transmission speed (bps)|P|L|O
 -|-|-|-|-|-|-|-
 0|EpidemicOracleRouter|2048|2048M|128k|20|-5|-3005
 1|EpidemicOracleRouter|2048|2048M|1M|20|-5|-3005
@@ -185,6 +178,24 @@ Index|Routing protocol|# Hosts|Buffer size|Transmission speed|P|L|O
 71|EpidemicRouter|2048|1M|128k|0|-9|-40119
 
 #### Analysis
+##### Facts
 With respect to the results just presented, we can notice the following:
 1. Only the EpidemicOracleRouter and the EpidemicRouter protocols are able to display Delivery Probabilities higher than 70% for any simulation scenario.
-2. EpidemicOracleRouter and EpidemicRouter are usually much more taxing on the transmission network than all other routing protocols: if scenarios based on SprayAndWaitRouter and SprayAndWaitRouter never display overhead ratios above 33 (which occurs for scenario \#50), the same metric is as high as 3005 for the best-performing EpidemicOracleRouter scenario or as high as 37272 for other top-five scenarios using the same protocol.
+2. EpidemicOracleRouter and EpidemicRouter are usually much more taxing on the transmission network than all other routing protocols: if scenarios based on SprayAndWaitRouter and SprayAndWaitRouter never display overhead ratios above 33 (which occurs for scenario \#50), the same metric is as high as 3005 for the best-performing EpidemicOracleRouter scenario or as high as 37272 for other top-five scenarios using the same protocol, with EpidemicRouter scenarios showing similar figures.
+3. When all other parameters are fixed, increasing buffer size will usually improve delivery probability.
+4. For the smallest buffer size, EpidemicRouter and EpidemicOracleRouter protocols perform the worst, while SprayAndWaitRouter gives the best results.
+5. For the EpidemicRouter protocol, increasing the transmission speed from 128K to 1M while maintaining all other parameters always improved delivery probability (see, for example, \#12 vs \#4 and \#16 vs \#7)
+6. For the EpidemicOracleRouter protocol, increasing the transmission speed from 128K to 1M while maintaining all other parameters never improved delivery probability (see, for example, \#0 vs \#1 and \#10 vs \#11)
+7. With all other parameters kept stable, changing the routing protocol from EpidemicRouter to EpidemicOracleRouter would usually improve delivery probability (see, for example, \#30 vs \#19 and \#4 vs \#1)
+8. With transmission speed is set to 1 Mbps and buffer size set to 1MB, changing the routing protocol from either EpidemicRouter or EpidemicOracleRouter to DirectDeliveryRouter always lead to higher delivery probability or much lower overhead ratio with similar delivery probability (see, for example, \#63 vs \#54 and \#59 vs \#38)
+9. With buffer size set to 1MB, changing the protocol from either EpidemicRouter, EpidemicOracleRouter or DirectDeliveryRouter to SprayAndWaitRouter would usually lead to much higher delivery probability (see, for example, \#52 vs \#18 or \#47 vs \#34)
+
+##### Rationale
+* Since EpidemicRouter and EpidemicOracleRouter are protocols that rely heavily on flooding - not bothering too much with keeping resource utilization down - these protocols should usually lead to the highest delivery probabilities and lowest latencies, as facts (1) and (2) show. This also explains why lower buffer sizes tend to disfavor these protocols, as facts (3), (4), (8) and (9) show.
+* Although the SprayAndWaitRouter protocol is also based replication, the fact that it limits the number of copies that each message may have on the system make it much more robust in low-buffer scenarios. This contributes to facts (4), (8) and (9).
+* The fact that SprayAndWaitRouter makes use of some degree of message replication while DirectDeliveryRouter does not explains fact (9), since replication should usually lead to higher delivery probability.
+* Given that the EpidemicRouter protocol doesn't rely on any historical data about network topology to make routing decisions, it is heavily dependent on the speed with which it may flood the network with the packets to be transmitted. That being the case, improving the transmission speed will usually improve the delivery probability of such protocol, as fact (5) reveals.
+* Since the EpidemicOracleRouter protocol - in contrast with the EpidemicRouter it is based upon - may take information about the contacts that hosts may have made with each other in the past into account for performing routing decisions, it is less dependent on flood speed than EpidemicRouter, as fact (6) suggests. It also tends to lead to more efficient use of message buffers than the latter protocol and, thus, higher delivery probability, as fact (7) indicates.
+
+#### Conclusion
+The set of tests that we described above were useful for describing each routing protocols should be used for several different scenarios involving VANET's. Concretly, we see that the EpidemicOracleRouter should be the routing protocol of choice whenever available message buffers are not too small and higher network utilization is not a great concern.
