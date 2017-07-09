@@ -230,23 +230,17 @@ that it limits the number of copies that each message may have on the system
 make it much more robust in low-buffer scenarios.
 
 The fact that SprayAndWaitRouter makes use of some degree of message
-replication while DirectDeliveryRouter does not explains fact (9), since
-replication should usually lead to higher delivery probability.
-Given that the EpidemicRouter protocol doesn't rely on any historical data
-about network topology to make routing decisions, it is heavily dependent on
-the speed with which it may flood the network with the packets to be
-transmitted. That being the case, improving the transmission speed will usually
-improve the delivery probability of such protocol, as fact (5) reveals.
+replication while DirectDeliveryRouter does not the higher Delivery Probability
+of SprayAndWaitRouter, since replication should usually lead to higher delivery
+probability.  Given that the EpidemicRouter protocol doesn't rely on any
+historical data about network topology to make routing decisions, it is heavily
+dependent on the speed with which it may flood the network with the packets to
+be transmitted. That being the case, improving the transmission speed will
+usually improve the delivery probability of such protocol.
 
 Since the EpidemicOracleRouter protocol - in contrast with the EpidemicRouter
 it is based upon - may take information about the contacts that hosts may have
 made with each other in the past into account for performing routing decisions,
-it is less dependent on flood speed than EpidemicRouter, as fact (6) suggests.
+it is less dependent on flood speed than EpidemicRouter.
 It also tends to lead to more efficient use of message buffers than the latter
-protocol and, thus, higher delivery probability, as fact (7) indicates.
-
-The set of tests that we described above were useful for describing each
-routing protocols should be used for several different scenarios involving
-VANET's. We see that the EpidemicOracleRouter should be the routing
-protocol of choice whenever available message buffers are not too small and
-higher network utilization is not a great concern.
+protocol and, thus, higher delivery probability.
