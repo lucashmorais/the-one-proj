@@ -16,6 +16,7 @@ combinations each.  All tests were run once with the same random seed.  The
 following tables describe the relevant parameters explored in this scenario.
 The DTN performance for each particular configuration was measured according to
 a single performance scale that we discuss next.
+
 \paragraph{Performance Scale}
 
 The experiments that we described should be useful for characterizing the
@@ -85,9 +86,9 @@ in the experiments.
 
 \subsection{Results}
 
-Tables \ref{tab:res1} and \ref{tab:res2} show the results of all the 72 tests that were conducted
-for the scenario above, ordered according to the performance scale described
-from best to worst.
+Tables \ref{tab:res1} and \ref{tab:res2} show the results of all the 72 tests
+that were conducted for the scenario above, ordered according to the
+performance scale described from best to worst.
 
 \begin{table}[htpb]
 \centering
@@ -193,9 +194,11 @@ best performing EpidemicOracleRouter scenario or as high as 37272 for other
 top five scenarios using the same protocol, with EpidemicRouter scenarios
 showing similar figures.
 
-When all other parameters are fixed, increasing buffer size will usually improve delivery probability.
-For the smallest buffer size, EpidemicRouter and EpidemicOracleRouter protocols
-perform the worst, while SprayAndWaitRouter gives the best results.
+When all other parameters are fixed, increasing buffer size will usually
+improve delivery probability.  For the smallest buffer size, EpidemicRouter and
+EpidemicOracleRouter protocols perform the worst, while SprayAndWaitRouter
+gives the best results.
+
 For the EpidemicRouter protocol, increasing the transmission speed from 128K to
 1M while maintaining all other parameters always improved delivery probability
 (see, for example, \#12 vs \#4 and \#16 vs \#7).
@@ -204,12 +207,13 @@ For the EpidemicOracleRouter protocol, increasing the transmission speed from
 probability (see, for example, \#0 vs \#1 and \#10 vs \#11).
 With all other parameters kept stable, changing the routing protocol from
 EpidemicRouter to EpidemicOracleRouter would usually improve delivery
-probability (see, for example, \#30 vs \#19 and \#4 vs \#1)
+probability (see, for example, \#30 vs \#19 and \#4 vs \#1).
+
 With transmission speed set to 1 Mbps and buffer size set to 1MB, changing the
 routing protocol from either EpidemicRouter or EpidemicOracleRouter to
 DirectDeliveryRouter always lead to higher delivery probability or much lower
 overhead ratio with similar delivery probability (see, for example, \#63 vs
-\#54 and \#59 vs \#38)
+\#54 and \#59 vs \#38).
 With buffer size set to 1MB, changing the protocol from either
 EpidemicRouter, EpidemicOracleRouter or DirectDeliveryRouter to
 SprayAndWaitRouter would usually lead to much higher delivery probability (see,
@@ -218,13 +222,12 @@ for example, \#52 vs \#18 or \#47 vs \#34)
 Since EpidemicRouter and EpidemicOracleRouter are protocols that rely heavily
 on flooding - not bothering too much with keeping resource utilization down -
 these protocols should usually lead to the highest delivery probabilities and
-lowest latencies, as facts (1) and (2) show. This also explains why lower
-buffer sizes tend to disfavor these protocols, as facts (3), (4), (8) and (9)
-show.
-Although the SprayAndWaitRouter protocol is also based replication, the fact
+lowest latencies. This also explains why lower
+buffer sizes tend to disfavor these protocols.
+
+Although the SprayAndWaitRouter protocol is also based in replication, the fact
 that it limits the number of copies that each message may have on the system
-make it much more robust in low-buffer scenarios. This contributes to facts
-(4), (8) and (9).
+make it much more robust in low-buffer scenarios.
 
 The fact that SprayAndWaitRouter makes use of some degree of message
 replication while DirectDeliveryRouter does not explains fact (9), since
